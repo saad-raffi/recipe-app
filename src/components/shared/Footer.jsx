@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-[#4ade80] text-base-content pt-4">
+    <footer className="footer p-10 bg-[#4ade80] text-base-content pt-8">
       <nav>
         <h6 className="footer-title">Services</h6>
         <a className="link link-hover">Chinise</a>
