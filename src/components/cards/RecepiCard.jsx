@@ -4,7 +4,7 @@ import './RecepiCard.css';
 
 const RecepiCard = ({ recipe }) => {
   return (
-    <div className="card">
+    <div className="card bg-violet-400">
       <img src={recipe.image} alt={recipe.name} className="card-img" />
       <div className="card-body">
         <h2 className="recipe-name">{recipe.title}</h2>

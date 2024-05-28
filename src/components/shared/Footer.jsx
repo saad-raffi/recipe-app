@@ -1,19 +1,19 @@
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <footer className="footer p-10 bg-[#4ade80] text-base-content pt-4">
       <nav>
         <h6 className="footer-title">Services</h6>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
+        <a className="link link-hover">Chinise</a>
+        <a className="link link-hover">Italian</a>
+        <a className="link link-hover">Thai</a>
+        <a className="link link-hover">Japanese</a>
       </nav>
       <nav>
         <h6 className="footer-title">Company</h6>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <a className="link link-hover">Career</a>
+        <a className="link link-hover">Branches</a>
       </nav>
       <nav>
         <h6 className="footer-title">Legal</h6>
