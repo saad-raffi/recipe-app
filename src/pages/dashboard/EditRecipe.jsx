@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,6 +8,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 const EditRecipe = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [recipeDetails, setRecipeDetails] = useState(null);
   const [categories, setCategories] = useState([]);
@@ -73,6 +74,32 @@ const EditRecipe = () => {
     });
   };
 
+  const handleDeleteRecipe = () => {
+    confirmAlert({
+      title: 'Confirm to delete',
+      message: 'Do you really want to delete this?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: async () => {
+            try {
+              await axios.delete(`http://localhost:3000/recipes/${id}`);
+              toast.success("Recipe deleted successfully!");
+              navigate("/dashboard/manage-recipes");
+            } catch (error) {
+              console.error("Error deleting recipe:", error);
+              toast.error("Failed to delete recipe. Please try again.");
+            }
+          }
+        },
+        {
+          label: 'No',
+          onClick: () => {}
+        }
+      ]
+    });
+  };
+
   return (
     <div className="w-full px-16">
       <h1 className="text-4xl mb-4">Edit Recipe</h1>
@@ -125,6 +152,9 @@ const EditRecipe = () => {
           />
         </div>
       </form>
+      <button onClick={handleDeleteRecipe} className="w-full py-3 px-5 border btn btn-error">
+        Delete Recipe
+      </button>
       <ToastContainer />
     </div>
   );

@@ -132,13 +132,6 @@
       "price": "12",
       "category": "French",
       "description": "Test "
-    },
-    {
-      "id": "1129",
-      "title": "Working",
-      "price": "24",
-      "category": "Chinese",
-      "description": "Working or not"
     }
   ],
   "categories": [

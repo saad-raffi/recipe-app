@@ -10,7 +10,7 @@ export default function Navbar() {
     await signOut();
   };
   return (
-    <div className="navbar bg-base-100 sticky top-0 px-16 z-10">
+    <div className="navbar bg-neutral-300 sticky top-0 px-16 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
@@ -44,7 +44,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <a className=" text-xl">daisyUI</a>
+        <a className=" text-xl">Epic Eats</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex items-center gap-6 px-1">
@@ -83,7 +83,7 @@ export default function Navbar() {
 
           <div className="avatar placeholder">
             <div className="bg-neutral text-neutral-content rounded-full w-8">
-              <span>AS</span>
+              <span></span>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function Banner() {
           <h1 className="mb-5 text-5xl font-bold">Welcome to </h1>
           <h2 className="mb-5 text-5xl font-bold">Delicious Recipes</h2>
           <p className="mb-5 ">
-          Welcome to Delicious Recipes, your one-stop destination for all things culinary! Whether you are a seasoned chef, a cooking enthusiast, or a beginner in the kitchen, our platform offers a diverse collection of recipes, cooking tips, and inspiration to elevate your culinary skills.
+          Welcome to Delicious Recipes, your one-stop destination for all things culinary! 
           </p>
           <button className="btn btn-primary">Get Started</button>
         </div>
