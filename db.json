@@ -13,7 +13,7 @@
       "title": "Chicken Tikka Masala",
       "price": 15.99,
       "description": "Grilled chunks of chicken enveloped in a creamy, spiced tomato sauce.",
-      "image": "https://example.com/images/chicken-tikka-masala.jpg",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk25VmJEIhWjo2V2pE4xBlAAptthKyyDygek0L-sFmZA&s",
       "category": "Indian"
     },
     {
@@ -21,7 +21,7 @@
       "title": "Sushi Platter",
       "price": 24.99,
       "description": "A variety of fresh sushi including nigiri, sashimi, and rolls.",
-      "image": "https://example.com/images/sushi-platter.jpg",
+      "image": "https://t3.ftcdn.net/jpg/06/78/84/42/240_F_678844214_azYguivQEEDmEB2tyxoYyzVbEVK4Bc2G.jpg",
       "category": "Japanese"
     },
     {
@@ -29,7 +29,7 @@
       "title": "Tacos al Pastor",
       "price": 10.99,
       "description": "Flavorful marinated pork served on small corn tortillas with pineapple and onions.",
-      "image": "https://example.com/images/tacos-al-pastor.jpg",
+      "image": "https://www.thespruceeats.com/thmb/wQd2RvxH1Lh9536W5LY1T_VSyT8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tacos-al-pastor-recipe-4172074-hero-01-7fb1a4455397486b8485ac8ec2ca3c5a.jpg",
       "category": "Mexican"
     },
     {
@@ -37,7 +37,7 @@
       "title": "Pad Thai",
       "price": 11.99,
       "description": "A stir-fried rice noodle dish with shrimp, tofu, peanuts, and tamarind sauce.",
-      "image": "https://example.com/images/pad-thai.jpg",
+      "image": "https://media.istockphoto.com/id/510163478/photo/pad-thai.jpg?s=612x612&w=0&k=20&c=-tOqzOMwfhq0JZrX0mfEHE4R-vaUua5I4rcuSlSeGs0=",
       "category": "Thai"
     },
     {
@@ -45,7 +45,7 @@
       "title": "Beef Wellington",
       "price": 29.99,
       "description": "Tender beef filet wrapped in puff pastry with duxelles and prosciutto.",
-      "image": "https://example.com/images/beef-wellington.jpg",
+      "image": "https://t4.ftcdn.net/jpg/01/83/94/29/360_F_183942968_94jM95v0SjdjwoNmIr0icqglkdqSEy7E.jpg",
       "category": "British"
     },
     {
@@ -69,7 +69,7 @@
       "title": "Margherita Pizza",
       "price": 13.99,
       "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
-      "image": "https://example.com/images/margherita-pizza.jpg",
+      "image": "https://media.istockphoto.com/id/686957124/photo/pizza-margherita.jpg?s=612x612&w=0&k=20&c=STQALvMIjcgXPIvpXXUXItAl05QtbmEUQ_PfwSato48=",
       "category": "Italian"
     },
     {
@@ -77,7 +77,7 @@
       "title": "Vegetable Stir Fry",
       "price": 9.99,
       "description": "A mix of fresh vegetables stir-fried with soy sauce and served over rice.",
-      "image": "https://example.com/images/vegetable-stir-fry.jpg",
+      "image": "https://t3.ftcdn.net/jpg/01/04/13/56/360_F_104135636_bH0l3ScKrNedCikbIsEgR49I6phhpzuH.jpg",
       "category": "Chinese"
     },
     {
@@ -109,29 +109,8 @@
       "title": "Ramen",
       "price": 12.99,
       "description": "A hearty Japanese noodle soup with meat, vegetables, and broth.",
-      "image": "https://example.com/images/ramen.jpg",
+      "image": "https://media.istockphoto.com/id/1365977387/photo/ramen-with-steaming-sizzle.jpg?s=612x612&w=0&k=20&c=8-Dij3YocgfVa2kj37msXT_iqzIgbqq0Ta3c1G4_-A0=",
       "category": "Japanese"
-    },
-    {
-      "id": "147",
-      "title": "test1111",
-      "price": "7878",
-      "category": "Mexican",
-      "descrition": "test"
-    },
-    {
-      "id": "121212",
-      "title": "Test ",
-      "price": "121",
-      "category": "Mexican",
-      "description": "This is a test description 001. It is a description of a recipe that I am adding to the database."
-    },
-    {
-      "id": "1980",
-      "title": "Test",
-      "price": "12",
-      "category": "French",
-      "description": "Test "
     }
   ],
   "categories": [

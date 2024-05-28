@@ -15,7 +15,13 @@ export default function RecipeRow({ recipe }) {
         >
           Edit
         </Link>
-        <button className="btn btn-xs btn-error">Delete</button>
+        <Link
+          to={`/dashboard/edit-recipe/${recipe?.id}`}
+          className="btn btn-xs btn-error" 
+        >
+          Delete
+        </Link>
+      
       </td>
     </tr>
   );

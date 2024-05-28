@@ -14,8 +14,8 @@ export default function ManageAllRecipe() {
     load();
   }, []);
   return (
-    <div className="overflow-x-auto w-full px-16 mt-10">
-      <h1 className="text-3xl mb-4">Mange All Recipe</h1>
+    <div className="overflow-x-auto justify-center w-full px-16 mt-10">
+      <h1 className="text-3xl justify-center mb-4">Mange All Recipe</h1>
       <table className="table table-zebra">
         {/* head */}
         <thead>

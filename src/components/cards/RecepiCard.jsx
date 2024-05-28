@@ -1,24 +1,21 @@
-/* eslint-disable react/prop-types */
-import pizza from "../../assets/pizza.webp";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './RecepiCard.css';
 
-export default function RecepiCard({ recipe }) {
+const RecepiCard = ({ recipe }) => {
   return (
-    <div className="card  bg-base-100 shadow-xl">
-      <figure>
-        <img src={pizza} alt="food" className="max-w-50" />
-      </figure>
+    <div className="card">
+      <img src={recipe.image} alt={recipe.name} className="card-img" />
       <div className="card-body">
-        <h2 className="card-title">{recipe?.title}</h2>
-        <h2 className="card-title">{recipe?.price}</h2>
-        <p>
-          {recipe?.description?.length > 30
-            ? recipe?.description?.slice(0, 30)
-            : recipe?.description}
-        </p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">{recipe?.category}</div>
-        </div>
+        <h2 className="recipe-name">{recipe.title}</h2>
+        <p className="recipe-price">Price: {recipe.price}</p>
+        <p className="recipe-details">{recipe.description}</p>
+        <span className="recipe-cuisine">{recipe.category}</span>
+        {/* Use Link component for navigation */}
+        <Link to={`/recipe/${recipe.id}`} className="details-button">Details</Link>
       </div>
     </div>
   );
-}
+};
+
+export default RecepiCard;

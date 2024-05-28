@@ -9,11 +9,13 @@ export default function Navbar() {
   const handleLogout = async () => {
     await signOut();
   };
+
   return (
     <div className="navbar bg-neutral-300 sticky top-0 px-16 z-10">
       <div className="navbar-start">
+        {/* Dropdown menu for small screens */}
         <div className="dropdown">
-          <div tabIndex={0} role="button" className=" lg:hidden">
+          <div tabIndex={0} role="button" className="lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -29,12 +31,9 @@ export default function Navbar() {
               />
             </svg>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
+          <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a>All Recepies</a>
+              <a>All Recipes</a>
             </li>
             <li>
               <a>About Us</a>
@@ -44,50 +43,45 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <a className=" text-xl">Epic Eats</a>
+        {/* Brand/logo */}
+        <Link to="/Home" className="text-xl">Epic Eats</Link>
       </div>
+      {/* Navigation links */}
       <div className="navbar-center hidden lg:flex">
         <ul className="flex items-center gap-6 px-1">
           <li>
-            <a>All Recepies</a>
+            <a href="#">All Recipes</a>
           </li>
           <li>
-            <Link to={"/about"}>About Us</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <a>Contact Us</a>
+            <a href="#">Contact Us</a>
           </li>
         </ul>
       </div>
-      {!user?.email ? (
-        <div className="navbar-end flex gap-4">
-          <Link to={"/login"} className="btn">
-            Login
-          </Link>
-          <Link to={"/register"} className="btn">
-            Registration
-          </Link>
-        </div>
-      ) : (
-        <div className="navbar-end flex gap-4">
-          <div>
-            <button className="btn" onClick={handleLogout}>
-              Logout
-            </button>
-          </div>
-          <div>
-            <Link to={"/dashboard"} className="btn">
-              Dashboard
-            </Link>
-          </div>
-
-          <div className="avatar placeholder">
-            <div className="bg-neutral text-neutral-content rounded-full w-8">
-              <span></span>
+      {/* User authentication and dashboard links */}
+      <div className="navbar-end flex gap-4">
+        {!user?.email ? (
+          // If user is not logged in
+          <>
+            <Link to="/login" className="btn">Login</Link>
+            <Link to="/register" className="btn">Registration</Link>
+          </>
+        ) : (
+          // If user is logged in
+          <>
+            <button className="btn" onClick={handleLogout}>Logout</button>
+            <Link to="/dashboard" className="btn">Dashboard</Link>
+            {/* Placeholder avatar */}
+            <div className="avatar placeholder">
+              <div className="bg-neutral text-neutral-content rounded-full w-8">
+                <span></span>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </>
+        )}
+      </div>
     </div>
   );
 }
