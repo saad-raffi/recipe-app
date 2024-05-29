@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-toastify/dist/ReactToastify.css';
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const EditRecipe = () => {
   const { id } = useParams();

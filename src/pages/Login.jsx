@@ -1,14 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import GoogleLogin from "../components/Auth/GoogleLogin";
 import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase/firebase.config";
+import { auth } from "../components/Auth/firebase.config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+  const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {

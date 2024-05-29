@@ -1,17 +1,14 @@
-import {
-  useAuthState,
-  useCreateUserWithEmailAndPassword,
-} from "react-firebase-hooks/auth";
-import { auth } from "../firebase/firebase.config";
-import { Link, useNavigate } from "react-router-dom";
+import { useAuthState, useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "../components/Auth/firebase.config";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import GoogleLogin from "../components/Auth/GoogleLogin";
 import { useEffect } from "react";
 
 export default function Register() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
+  const location = useLocation();
+  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();

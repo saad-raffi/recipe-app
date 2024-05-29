@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-[#4ade80] text-base-content pt-8">
+    <footer className="footer p-10 bg-[#4ade80] text-base-content mt-8"> {/* Add mt-8 for margin-top */}
       <nav>
         <h6 className="footer-title">Services</h6>
-        <a className="link link-hover">Chinise</a>
+        <a className="link link-hover">Chinese</a>
         <a className="link link-hover">Italian</a>
         <a className="link link-hover">Thai</a>
         <a className="link link-hover">Japanese</a>

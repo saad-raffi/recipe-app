@@ -1,87 +1,51 @@
-import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase/firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../Auth/firebase.config';
+import { signOut } from 'firebase/auth';
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
-  const [signOut] = useSignOut(auth);
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await signOut();
+    await signOut(auth);
+    navigate('/login');
   };
 
   return (
-    <div className="navbar bg-neutral-300 sticky top-0 px-16 z-10">
-      <div className="navbar-start">
-        {/* Dropdown menu for small screens */}
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-              <a>All Recipes</a>
-            </li>
-            <li>
-              <a>About Us</a>
-            </li>
-            <li>
-              <a>Contact Us</a>
-            </li>
-          </ul>
+    <nav className="bg-gray-800 p-4 text-white">
+      <div className="container mx-auto flex justify-between items-center">
+        <div>
+          <Link to="/" className="text-xl font-bold">Epic Eats</Link>
         </div>
-        {/* Brand/logo */}
-        <Link to="/Home" className="text-xl">Epic Eats</Link>
-      </div>
-      {/* Navigation links */}
-      <div className="navbar-center hidden lg:flex">
-        <ul className="flex items-center gap-6 px-1">
-          <li>
-            <a href="#">All Recipes</a>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <a href="#">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-      {/* User authentication and dashboard links */}
-      <div className="navbar-end flex gap-4">
-        {!user?.email ? (
-          // If user is not logged in
-          <>
-            <Link to="/login" className="btn">Login</Link>
-            <Link to="/register" className="btn">Registration</Link>
-          </>
-        ) : (
-          // If user is logged in
-          <>
-            <button className="btn" onClick={handleLogout}>Logout</button>
-            <Link to="/dashboard" className="btn">Dashboard</Link>
-            {/* Placeholder avatar */}
-            <div className="avatar placeholder">
-              <div className="bg-neutral text-neutral-content rounded-full w-8">
-                <span></span>
-              </div>
+        <div className="flex items-center">
+          <Link to="/all-recipes" className="mr-4">All Recipes</Link>
+          <Link to="/about-us" className="mr-4">About Us</Link>
+          <Link to="/contact-us" className="mr-4">Contact Us</Link>
+          {user ? (
+            <div className="flex items-center">
+              {user.photoURL && (
+                <img
+                  src={user.photoURL}
+                  alt={user.displayName}
+                  className="w-8 h-8 rounded-full mr-2"
+                />
+              )}
+              <span className="mr-4">{user.displayName}</span>
+              {/* Link to DashboardLayout when Dashboard is clicked */}
+              <Link to="/dashboard" className="mr-4">Dashboard</Link>
+              <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Logout
+              </button>
             </div>
-          </>
-        )}
+          ) : (
+            <>
+              <Link to="/login" className="mr-4">Login</Link>
+              <Link to="/register">Register</Link>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
